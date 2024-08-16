@@ -13,6 +13,7 @@ from sklearn.preprocessing import OneHotEncoder,StandardScaler
 from src.exception import CustomException
 from src.logger import logging
 
+
 @dataclass
 class DataTransformationConfig:
     preprocessor_obj_file_path = os.path.join('artifact', "preprocessor.pkl")
@@ -44,7 +45,8 @@ class DataTransformation:
             cat_pipeline = Pipeline(
                 steps=[
                     ("imputer", SimpleImputer(strategy="most_frequent")),
-                    ("one_hot_encoder", OneHotEncoder())
+                    ("one_hot_encoder", OneHotEncoder()),
+                    ("scaler",StandardScaler(with_mean=False))
                 ]
             )
             
