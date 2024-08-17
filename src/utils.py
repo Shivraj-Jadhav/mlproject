@@ -48,7 +48,6 @@ def evaluate_models(X_train,y_train,X_test,y_test,models,param):
         raise CustomException(e,sys)
     
 
-import pickle  # Or dill if needed
 
 def load_object(file_path):
     """Loads an object from a file.
